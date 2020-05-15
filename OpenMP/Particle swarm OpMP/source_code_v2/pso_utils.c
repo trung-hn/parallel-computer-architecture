@@ -292,8 +292,8 @@ swarm_t *pso_init_parallel(char *function, int dim, int swarm_size,
     if (swarm->particle == NULL)
         return NULL;
 
-// #pragma omp parallel num_threads(thread_count)
-// {}
+#pragma omp parallel for num_threads(thread_count)\
+ default(none) private(i, j, particle, fitness, status) shared(swarm, xmin, xmax, dim, function)
     for (i = 0; i < swarm->num_particles; i++) {
         particle = &swarm->particle[i];
         particle->dim = dim; 
@@ -316,7 +316,7 @@ swarm_t *pso_init_parallel(char *function, int dim, int swarm_size,
         status = pso_eval_fitness(function, particle, &fitness);
         if (status < 0) {
             fprintf(stderr, "Could not evaluate fitness. Unknown function provided.\n");
-            return NULL;
+            // return NULL;
         }
         particle->fitness = fitness;
 
