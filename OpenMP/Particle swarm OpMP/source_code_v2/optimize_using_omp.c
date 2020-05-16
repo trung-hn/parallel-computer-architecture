@@ -64,9 +64,9 @@ default(none) private(i, r1, r2, j, particle, gbest, curr_fitness) shared(functi
                     particle->pbest[j] = particle->x[j];
             }
         } /* Particle loop */
+        
         /* Identify best performing particle */
         g = pso_get_best_fitness_parallel(swarm, thread_count);
-        // g = pso_get_best_fitness(swarm);
         for (i = 0; i < swarm->num_particles; i++) {
             particle = &swarm->particle[i];
             particle->g = g;

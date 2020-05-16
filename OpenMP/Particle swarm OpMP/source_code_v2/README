@@ -1,0 +1,16 @@
+Steps to compile and run the program:
+
+1. Run the command make to compile the program files
+
+2. Type ./pso followed by the function-name, dimension, swarm-size, xmin, xmax, max-iter, and num-threads
+
+   function-name: name of function to optimiz (booth, holder_table, or egghold)e
+   dimension: dimensionality of search
+   spaceswarm-size: number of particles in swarm
+   xmin, xmax: lower and upper bounds on search domain
+   max-iter: number of iterations to run the optimizer
+   num-threads: number of threads to create
+
+   Example: ./pso eggholder 2 100 -512 512 1000 1
+
+3. Run make clean to remove executable files in source directory

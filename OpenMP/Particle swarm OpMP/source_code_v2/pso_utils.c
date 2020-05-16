@@ -149,21 +149,21 @@ int pso_get_best_fitness_parallel(swarm_t *swarm, int thread_count)
 {
     int i, g;
     float best_fitness = INFINITY;
-    particle_t *particle;
     g = -1;
-    omp_set_num_threads(thread_count);
-#pragma omp parallel for default(none) shared(swarm, best_fitness, g) private(i, particle)
-    for (i = 0; i < swarm->num_particles; i++) {
-        // printf("Thread id: %d, %d\n", omp_get_thread_num(), i);
-        particle = &swarm->particle[i];
-        #pragma omp critical
-        {
-            if (particle->fitness < best_fitness) {
-                best_fitness = particle->fitness;
-                g = i;
+#pragma omp parallel num_threads(thread_count) private(i)
+{
+#pragma omp for reduction(min:best_fitness)
+            for(i = 0 ; i < swarm->num_particles; i++) {
+                if ((&swarm->particle[i])->fitness < best_fitness) {
+                    best_fitness = (&swarm->particle[i])->fitness;
+                }
             }
-        }
+#pragma omp for  
+    for(i = 0 ; i < swarm->num_particles; i++) {
+        if ((&swarm->particle[i])->fitness == best_fitness)
+            g = i;  
     }
+}
     return g;
 }
 
@@ -281,7 +281,6 @@ swarm_t *pso_init_parallel(char *function, int dim, int swarm_size,
                   float xmin, float xmax, int thread_count)
 {
     int i, j, g;
-    int status;
     float fitness;
     swarm_t *swarm;
     particle_t *particle;
@@ -293,7 +292,7 @@ swarm_t *pso_init_parallel(char *function, int dim, int swarm_size,
         return NULL;
 
 #pragma omp parallel for num_threads(thread_count)\
- default(none) private(i, j, particle, fitness, status) shared(swarm, xmin, xmax, dim, function)
+ default(none) private(i, j, particle, fitness) shared(swarm, xmin, xmax, dim, function)
     for (i = 0; i < swarm->num_particles; i++) {
         particle = &swarm->particle[i];
         particle->dim = dim; 
@@ -313,11 +312,7 @@ swarm_t *pso_init_parallel(char *function, int dim, int swarm_size,
             particle->pbest[j] = particle->x[j];
 
         /* Initialize particle fitness */
-        status = pso_eval_fitness(function, particle, &fitness);
-        if (status < 0) {
-            fprintf(stderr, "Could not evaluate fitness. Unknown function provided.\n");
-            // return NULL;
-        }
+        pso_eval_fitness(function, particle, &fitness);
         particle->fitness = fitness;
 
         /* Initialize index of best performing particle */
