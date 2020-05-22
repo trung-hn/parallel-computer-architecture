@@ -10,16 +10,16 @@ blur_filter_kernel (const float *in, float *out, int size)
 {
 
     /* Obtain thread index within the thread block */
-    int threadX = threadIdx.x;
-    int threadY = threadIdx.y;
+    int row = threadIdx.x;
+    int col = threadIdx.y;
 
 	/* Obtain block index within the grid */
-	int blockX = blockIdx.x;
-    int blockY = blockIdx.y;
+	// int blockX = blockIdx.x;
+    // int blockY = blockIdx.y;
     
     /* Find position in matrix */
-	int col = blockDim.x * blockX + threadX;
-    int row = blockDim.y * blockY + threadY;
+	// int col = blockDim.x * blockX + threadX;
+    // int row = blockDim.y * blockY + threadY;
     int curr_row, curr_col, i, j;
     long num_elements = size * size;
     
