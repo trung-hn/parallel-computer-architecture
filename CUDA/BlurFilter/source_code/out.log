@@ -1,0 +1,170 @@
+Creating 16 x 16 images
+
+Calculating blur on the CPU
+Gold execution time = 0.000012s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000100s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 32 x 32 images
+
+Calculating blur on the CPU
+Gold execution time = 0.000042s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000070s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 64 x 64 images
+
+Calculating blur on the CPU
+Gold execution time = 0.000111s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000060s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 128 x 128 images
+
+Calculating blur on the CPU
+Gold execution time = 0.000592s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000068s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 256 x 256 images
+
+Calculating blur on the CPU
+Gold execution time = 0.003040s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000105s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 512 x 512 images
+
+Calculating blur on the CPU
+Gold execution time = 0.011370s
+
+Calculating blur on the GPU
+Kernel execution time = 0.000359s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1024 x 1024 images
+
+Calculating blur on the CPU
+Gold execution time = 0.041650s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001022s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1025 x 1025 images
+
+Calculating blur on the CPU
+Gold execution time = 0.039470s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001007s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1026 x 1026 images
+
+Calculating blur on the CPU
+Gold execution time = 0.029976s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001008s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1027 x 1027 images
+
+Calculating blur on the CPU
+Gold execution time = 0.035796s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001007s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1028 x 1028 images
+
+Calculating blur on the CPU
+Gold execution time = 0.028544s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001013s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1029 x 1029 images
+
+Calculating blur on the CPU
+Gold execution time = 0.028680s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001010s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 1030 x 1030 images
+
+Calculating blur on the CPU
+Gold execution time = 0.036266s
+
+Calculating blur on the GPU
+Kernel execution time = 0.001013s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 2048 x 2048 images
+
+Calculating blur on the CPU
+Gold execution time = 0.129765s
+
+Calculating blur on the GPU
+Kernel execution time = 0.003897s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 4096 x 4096 images
+
+Calculating blur on the CPU
+Gold execution time = 0.477586s
+
+Calculating blur on the GPU
+Kernel execution time = 0.015366s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 8192 x 8192 images
+
+Calculating blur on the CPU
+Gold execution time = 1.668563s
+
+Calculating blur on the GPU
+Kernel execution time = 0.060059s
+
+Checking CPU and GPU results
+TEST PASSED
+Creating 16384 x 16384 images
+
+Calculating blur on the CPU
+Gold execution time = 6.670580s
+
+Calculating blur on the GPU
+Kernel execution time = 0.213608s
+
+Checking CPU and GPU results
+TEST PASSED
